@@ -74,7 +74,7 @@ function articleCardCreator (articleObj){
 
     headline.textContent = articleObj.headline
     img.src = articleObj.authorPhoto
-    authorsName.textContent = articleObj.authorName
+    authorsName.textContent = `By ${articleObj.authorName}`
 
     cardContainer.appendChild(headline)
     cardContainer.appendChild(author)

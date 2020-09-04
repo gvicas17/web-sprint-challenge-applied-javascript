@@ -21,6 +21,10 @@ function Header() {
     date.classList.add('date')
     temp.classList.add('temp')
 
+    date.textContent = `March 28, 2020`
+    title.textContent = `Lambda Times`
+    temp.textContent = `98°`
+
     headerContainer.appendChild(date)
     headerContainer.appendChild(title)
     headerContainer.appendChild(temp)
@@ -29,3 +33,4 @@ function Header() {
     entryPoint.appendChild(headerContainer)
     return entryPoint
 }
+Header()

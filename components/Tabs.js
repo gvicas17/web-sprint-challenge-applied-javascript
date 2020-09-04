@@ -13,8 +13,11 @@
 
 axios.get('https://lambda-times-api.herokuapp.com/topics')
 .then (response => {
+    console.log(response.data)
     const topicData = response.data.topics
-    tabsCreator(topicData)
+    topicData.forEach(topic =>{
+        tabsEntryPoint.appendChild(tabsCreator(topic))
+    })
 })
 .catch (error =>{
     console.log('data not returned' , error)
@@ -22,14 +25,14 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
 
 
 
-function tabsCreator (){
+function tabsCreator (obj){
     const topic = document.createElement('div')
-    topic.classList.add('tab')
-
-
-    const tabsEntryPoint = document.querySelector('.title')
-    tabsEntryPoint.appendChild(topic)
     
-    return tabsEntryPoint
+    topic.classList.add('tab')
+    
+    topic.textContent = obj
+    
+    return topic
     
 }
+const tabsEntryPoint = document.querySelector('.title')

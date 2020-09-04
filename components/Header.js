@@ -29,5 +29,3 @@ function Header() {
     entryPoint.appendChild(headerContainer)
     return entryPoint
 }
-
-console.log (Header)

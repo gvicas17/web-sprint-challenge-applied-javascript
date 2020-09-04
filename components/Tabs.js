@@ -26,13 +26,13 @@ axios.get('https://lambda-times-api.herokuapp.com/topics')
 
 
 function tabsCreator (obj){
-    const topic = document.createElement('div')
+    const topic1 = document.createElement('div')
     
-    topic.classList.add('tab')
+    topic1.classList.add('tab')
     
-    topic.textContent = obj
-    
-    return topic
+    topic1.textContent = obj
+
+    return topic1
     
 }
-const tabsEntryPoint = document.querySelector('.title')
+const tabsEntryPoint = document.querySelector('.topics')

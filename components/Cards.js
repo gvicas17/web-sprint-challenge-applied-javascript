@@ -24,10 +24,33 @@
 
 axios.get('https://lambda-times-api.herokuapp.com/articles')
 .then (response => {
-    console.log(response.data)
-    const articleData = (response.data)
-    const objectInfo = Object.entries(articleData)
-    objectInfo.forEach(info =>{
+    console.log(response.data.articles)
+    const articleData1 = (response.data.articles.bootstrap)
+    const articleData2 = (response.data.articles.javascript)
+    const articleData3 = (response.data.articles.jquery)
+    const articleData4 = (response.data.articles.node)
+    const articleData5 = (response.data.articles.technology)
+
+
+    const objectInfo1 = Object.values(articleData1)
+    const objectInfo2 = Object.values(articleData2)
+    const objectInfo3 = Object.values(articleData3)
+    const objectInfo4= Object.values(articleData4)
+    const objectInfo5 = Object.values(articleData5)
+    
+    objectInfo1.forEach(info =>{
+        cardEntryPoint.appendChild(articleCardCreator(info))
+    })
+    objectInfo2.forEach(info =>{
+        cardEntryPoint.appendChild(articleCardCreator(info))
+    })
+    objectInfo3.forEach(info =>{
+        cardEntryPoint.appendChild(articleCardCreator(info))
+    })
+    objectInfo4.forEach(info =>{
+        cardEntryPoint.appendChild(articleCardCreator(info))
+    })
+    objectInfo5.forEach(info =>{
         cardEntryPoint.appendChild(articleCardCreator(info))
     })
 })
